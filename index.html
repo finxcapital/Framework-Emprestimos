@@ -255,13 +255,8 @@
           <div class="select-selected" id="displaySupervisor">Selecione...</div>
           <div class="select-items">
           
-            <div data-value="Aline Bernardo" data-email="aline.bernardo@finxcapital.com.br">Aline Bernardo</div>
-            <div data-value="Aline Oliveira" data-email="aline.oliveira@finxcapital.com.br">Aline Oliveira</div>
-            <div data-value="Amanda Gazetta" data-email="amanda.gazetta@finxcapital.com.br">Amanda Gazetta</div>
-            <div data-value="Ana Paula" data-email="ana.silva@finxcapital.com.br">Ana Paula</div>
-            <div data-value="Bruno Celestino" data-email="bruno.celestino@finxcapital.com.br">Bruno Celestino</div>
-            <div data-value="Francisco Vianna" data-email="francisco.oliveira@finxcapital.com.br">Francisco Vianna</div>
-            <div data-value="Tiago Benatti" data-email="tiago.benatti@finxcapital.com.br">Tiago Benatti</div>
+            <div data-value="Alysson Rodrigues" data-email="alysson.rodrigues@finxcapital.com.br">Alysson Rodrigues</div>
+            <div data-value="Lucca Moraes" data-email="lucca.moraes@finxcapital.com.br">Lucca Moraes</div>
           </div>
           <input type="hidden" name="supervisor" id="inputSupervisor" class="track-single" required>
         </div>
@@ -275,9 +270,7 @@
         <div class="custom-select" id="selectEquipe">
           <div class="select-selected" id="displayEquipe">Selecione...</div>
           <div class="select-items">
-            <div data-value="Movida">Movida</div>
-            <div data-value="Condicional">Condicional</div>
-            <div data-value="Localiza">Localiza</div>
+            <div data-value="Closer">Closer</div>
             <div data-value="SDR">SDR</div>
           </div>
           <input type="hidden" name="equipe" id="inputEquipe" class="track-single" required>
@@ -308,11 +301,10 @@
           </div>
         </div>
         <div class="subgroup" style="margin-top:16px">
-          <div class="subgroup-title">1.2 Eficiência por Esteira (%) - Preencha a de foco</div>
-          <div class="grid-3">
-            <div class="field"><label>Movida</label><input type="text" name="eficienciaMovida" id="eficienciaMovida" class="track-esteira" placeholder="0%" oninput="maskPct(this)"></div>
-            <div class="field"><label>Condicional</label><input type="text" name="eficienciaCondicional" id="eficienciaCondicional" class="track-esteira" placeholder="0%" oninput="maskPct(this)"></div>
-            <div class="field"><label>Localiza</label><input type="text" name="eficienciaLocaliza" id="eficienciaLocaliza" class="track-esteira" placeholder="0%" oninput="maskPct(this)"></div>
+          <div class="subgroup-title">1.2 Eficiência (%) - Preencha a de foco</div>
+          <div class="grid-2">
+            <div class="field"><label>Closer</label><input type="text" name="eficienciaCloser" id="eficienciaCloser" class="track-esteira" placeholder="0%" oninput="maskPct(this)"></div>
+            <div class="field"><label>SDR</label><input type="text" name="eficienciaSDR" id="eficienciaSDR" class="track-esteira" placeholder="0%" oninput="maskPct(this)"></div>
           </div>
         </div>
         <div class="grid-2" style="margin-top:16px; gap:16px;">
@@ -462,13 +454,8 @@ function maskInt(el) {
 }
 
 const CLOSERS = {
-  "Ana Paula": ["Abmael Santiago", "Antônio Gouvêa", "Brenda Souza", "Claudia Luis", "Daniela Barbosa", "Leonardo Magalhães", "Michelle Grosso", "Nathalia Souza"],
-  "Tiago Benatti": ["Caren Balbino", "Eduarda Mançano", "Fabiola Tonini", "Heryck Sales", "Josana Deus", "Suzane Xavier", "Talita Lacerda", "Thiago Oliveira", "Valéria Silva"],
-  "Amanda Gazetta": ["Cintia Santos", "Grazielle Oliveira", "Jhessilyn Souza", "Maria Gomes", "Natasha Araújo", "Nathalli Santos", "Rafael Silva", "Victor Ribeiro"],
-  "Bruno Celestino": ["Cleidiane Cunha", "Helen Aguiar", "Jessica Souza", "Lucas Ribeiro", "Mariana Silva"],
-  "Francisco Vianna": ["João Santos", "Renan Cauchick", "Vinicius Silva"],
-  "Aline Bernardo": ["Matheus Paiva", "Rafaela Borges", "Vitória Rodrigues"],
-  "Aline Oliveira": ["Dainel Grola", "Luis Junior", "Pâmela Araújo", "Priscylla Silva"]
+  "Alysson Rodrigues": ["Ana Santos", "Gerffeson Farias", "Ingrid Sabino", "Lennira Rocha", "Nelma Cardoso", "Rafaela Bertolino", "Thiago Rosa"],
+  "Lucca Moraes": ["Teste"]
 };
 
 const DIAG_CONFIG = [
@@ -871,9 +858,8 @@ function coletarFormulario() {
     metaRecalcR: extractCurrency(document.getElementById('metaRecalcR').value),
     metaRecalcVol: extractInt(document.getElementById('metaRecalcVol').value),
     metaMesR: extractCurrency(document.getElementById('metaMesR').value),
-    eficienciaMovida: extractPct(document.getElementById('eficienciaMovida').value),
-    eficienciaCondicional: extractPct(document.getElementById('eficienciaCondicional').value),
-    eficienciaLocaliza: extractPct(document.getElementById('eficienciaLocaliza').value),
+    eficienciaCloser: extractPct(document.getElementById('eficienciaCloser').value),
+    eficienciaSDR: extractPct(document.getElementById('eficienciaSDR').value),
     deficitR: extractCurrency(document.getElementById('deficitR').value),
     deficitVol: extractInt(document.getElementById('deficitVol').value),
     metaRelogioOrcado: extractCurrency(document.getElementById('metaRelogioOrcado').value),
@@ -1015,10 +1001,10 @@ function buildEmailHTML(d) {
       ${card('01','Indicadores do Dia', kvTable([
         ['Meta Recalc. R$', formatCur(d.metaRecalcR)], ['Meta Recalc. Vol', d.metaRecalcVol],
         ['Meta Mês R$', formatCur(d.metaMesR)], ['Déficit R$', formatCur(d.deficitR)],
-        ['Efic. Movida 100%', formatPct(d.eficienciaMovida)], ['Efic. Condicional', formatPct(d.eficienciaCondicional)],
-        ['Efic. Localiza', formatPct(d.eficienciaLocaliza)], ['Déficit Vol', d.deficitVol], 
-        ['Total Indicações', d.totalIndicacoes], ['Ligações Produtivas', d.ligacoesProdutivas],
-        ['Relógio Orçado', formatCur(d.metaRelogioOrcado)], ['Relógio Realizado', formatCur(d.metaRelogioRealizado)],
+        ['Efic. Closer', formatPct(d.eficienciaCloser)], ['Efic. SDR', formatPct(d.eficienciaSDR)],
+        ['Déficit Vol', d.deficitVol], ['Total Indicações', d.totalIndicacoes],
+        ['Ligações Produtivas', d.ligacoesProdutivas], ['Relógio Orçado', formatCur(d.metaRelogioOrcado)], 
+        ['Relógio Realizado', formatCur(d.metaRelogioRealizado)],
       ]))}
       ${card('02','Diagnóstico (Ofensores)', diagCardsHTML)}
       ${temAcoes ? card('03','Plano de Ação', acoesCardsHTML) : ''}
@@ -1033,7 +1019,7 @@ function buildEmailHTML(d) {
 </td></tr></table></body></html>`;
 }
 
-const BACKEND_URL = 'https://script.google.com/macros/s/AKfycbwdFf0EvNFweOE7_EhNsYmpPk7-FGHsRJBcxLgnadxQ7SMmrNugnFP00eSWzx_YrKD3/exec';
+const BACKEND_URL = 'https://script.google.com/macros/s/AKfycbzzUXcwPeiCSq_bjE2GR2eL-_GtaBF-IWLpHM8k0t_qczaR3CpzNwfEkTZ2g7U5ja0tiw/exec';
 const SENHA_TESTE = '7530';
 let isSubmitting = false;
 
@@ -1062,7 +1048,7 @@ function montarPayload(isTeste) {
   const sheetRow = [
     d.data, d.supervisor, d.equipe,
     d.metaRecalcR, d.metaRecalcVol, d.metaMesR,
-    d.eficienciaMovida, d.eficienciaCondicional, d.eficienciaLocaliza,
+    d.eficienciaCloser, d.eficienciaSDR,
     d.deficitR, d.deficitVol, d.totalIndicacoes, d.ligacoesProdutivas,
     d.metaRelogioOrcado, d.metaRelogioRealizado,
     ...flatDiag,
