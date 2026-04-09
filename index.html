@@ -254,7 +254,6 @@
         <div class="custom-select" id="selectSupervisor">
           <div class="select-selected" id="displaySupervisor">Selecione...</div>
           <div class="select-items">
-          
             <div data-value="Alysson Rodrigues" data-email="alysson.rodrigues@finxcapital.com.br">Alysson Rodrigues</div>
           </div>
           <input type="hidden" name="supervisor" id="inputSupervisor" class="track-single" required>
@@ -269,8 +268,7 @@
         <div class="custom-select" id="selectEquipe">
           <div class="select-selected" id="displayEquipe">Selecione...</div>
           <div class="select-items">
-            <div data-value="Closer">Closer</div>
-            <div data-value="SDR">SDR</div>
+            <div data-value="EGV">EGV</div>
           </div>
           <input type="hidden" name="equipe" id="inputEquipe" class="track-single" required>
         </div>
@@ -291,47 +289,33 @@
         <span class="section-num">01</span><span class="section-title">Indicadores do Dia</span><span class="section-badge">Quantitativo</span>
       </div>
       <div class="section-body">
-        <div class="subgroup">
-          <div class="subgroup-title">1.1 Meta Recalculada</div>
+        
+        <div class="subgroup" style="margin-top:0;">
+          <div class="subgroup-title">1.1 Financeiro</div>
           <div class="grid-3">
-            <div class="field mono"><label>Valor (R$)</label><input type="text" name="metaRecalcR" id="metaRecalcR" class="track-single" placeholder="R$ 0,00" oninput="maskMoeda(this)"></div>
-            <div class="field mono"><label>Volume</label><input type="text" name="metaRecalcVol" id="metaRecalcVol" class="track-single" placeholder="0" oninput="maskInt(this)"></div>
-            <div class="field mono"><label>Meta Mês (R$)</label><input type="text" name="metaMesR" id="metaMesR" class="track-single" placeholder="R$ 0,00" oninput="maskMoeda(this)"></div>
+            <div class="field mono"><label>Meta do Mês (R$)</label><input type="text" name="metaMesR" id="metaMesR" class="track-single" placeholder="R$ 0,00" oninput="maskMoeda(this)"></div>
+            <div class="field mono"><label>Orçado (R$)</label><input type="text" name="orcadoR" id="orcadoR" class="track-single" placeholder="R$ 0,00" oninput="maskMoeda(this)"></div>
+            <div class="field mono"><label>Realizado (R$)</label><input type="text" name="realizadoR" id="realizadoR" class="track-single" placeholder="R$ 0,00" oninput="maskMoeda(this)"></div>
           </div>
         </div>
-        <div class="subgroup" style="margin-top:16px">
-          <div class="subgroup-title">1.2 Eficiência (%) - Preencha a de foco</div>
-          <div class="grid-2">
-            <div class="field"><label>Closer</label><input type="text" name="eficienciaCloser" id="eficienciaCloser" class="track-esteira" placeholder="0%" oninput="maskPct(this)"></div>
-            <div class="field"><label>SDR</label><input type="text" name="eficienciaSDR" id="eficienciaSDR" class="track-esteira" placeholder="0%" oninput="maskPct(this)"></div>
-          </div>
-        </div>
+
         <div class="grid-2" style="margin-top:16px; gap:16px;">
           <div class="subgroup" style="margin-top:0;">
-            <div class="subgroup-title">1.3 Déficit do Mês</div>
+            <div class="subgroup-title">1.2 Projeção</div>
             <div class="grid-2">
-              <div class="field mono"><label>Valor (R$)</label><input type="text" name="deficitR" id="deficitR" class="track-single" placeholder="R$ 0,00" oninput="maskMoeda(this)"></div>
-              <div class="field mono"><label>Volume</label><input type="text" name="deficitVol" id="deficitVol" class="track-single" placeholder="0" oninput="maskInt(this)"></div>
+              <div class="field mono"><label>GAP (R$)</label><input type="text" name="gapR" id="gapR" class="track-single" placeholder="R$ 0,00" oninput="maskMoeda(this)"></div>
+              <div class="field mono"><label>Meta Recalc. (R$)</label><input type="text" name="metaRecalcR" id="metaRecalcR" class="track-single" placeholder="R$ 0,00" oninput="maskMoeda(this)"></div>
             </div>
           </div>
           <div class="subgroup" style="margin-top:0;">
-            <div class="subgroup-title">1.4 Meta Relógio (Acumulado)</div>
+            <div class="subgroup-title">1.3 Operacional</div>
             <div class="grid-2">
-              <div class="field mono"><label>Orçado</label><input type="text" name="metaRelogioOrcado" id="metaRelogioOrcado" class="track-single" placeholder="R$ 0,00" oninput="maskMoeda(this)"></div>
-              <div class="field mono"><label>Realizado</label><input type="text" name="metaRelogioRealizado" id="metaRelogioRealizado" class="track-single" placeholder="R$ 0,00" oninput="maskMoeda(this)"></div>
+              <div class="field"><label>Pagamento (%)</label><input type="text" name="pagamentoPct" id="pagamentoPct" class="track-single" placeholder="0%" oninput="maskPct(this)"></div>
+              <div class="field"><label>Capacity (%)</label><input type="text" name="capacityPct" id="capacityPct" class="track-single" placeholder="0%" oninput="maskPct(this)"></div>
             </div>
           </div>
         </div>
-        <div class="grid-2" style="margin-top:16px; gap:16px;">
-          <div class="subgroup" style="margin-top:0;">
-            <div class="subgroup-title">1.5 Total de Indicações</div>
-            <div class="field mono"><label>Total</label><input type="text" name="totalIndicacoes" id="totalIndicacoes" class="track-single" placeholder="0" oninput="maskInt(this)"></div>
-          </div>
-          <div class="subgroup" style="margin-top:0;">
-            <div class="subgroup-title">1.6 Ligações Produtivas</div>
-            <div class="field mono"><label>Volume</label><input type="text" name="ligacoesProdutivas" id="ligacoesProdutivas" class="track-single" placeholder="0" oninput="maskInt(this)"></div>
-          </div>
-        </div>
+
       </div>
     </div>
 
@@ -431,19 +415,15 @@ function maskMoeda(el) {
 
 function maskPct(el) {
   let v = el.value.replace(/[^\d,]/g, '');
-  
   const partes = v.split(',');
   if (partes.length > 2) {
     v = partes[0] + ',' + partes.slice(1).join('');
   }
-
   if (!v) { 
     el.value = ''; 
     return; 
   }
-
   el.value = v + '%';
-
   const pos = el.value.length - 1;
   el.setSelectionRange(pos, pos);
 }
@@ -456,23 +436,23 @@ const CLOSERS = {
   "Alysson Rodrigues": ["Ana Santos", "Gerffeson Farias", "Ingrid Sabino", "Lennira Rocha", "Nelma Cardoso", "Rafaela Bertolino", "Thiago Rosa"]
 };
 
+// 1. Diagnóstico atualizado conforme regras
 const DIAG_CONFIG = [
   { id: 'ativ', title: 'Quantitativo (Atividade / Esforço)', desc: 'A pessoa está fazendo o trabalho necessário, em quantidade suficiente, com intensidade adequada?', checks: [
     { id: 'diag_ativ_cob', label: 'Contactou todos os leads', desc: 'O vendedor está realmente trabalhando a carteira que recebe?' },
     { id: 'diag_ativ_int', label: 'Quantidade de contatos', desc: 'O vendedor está gerando o número de tentativas que o funil exige?' },
-    { id: 'diag_ativ_per', label: 'Seguiu a cadência de follow-up', desc: 'A venda está sendo abandonada cedo demais?' },
+    { id: 'diag_ativ_per', label: 'Seguiu a cadência', desc: 'A venda está sendo abandonada cedo demais?' },
     { id: 'diag_ativ_vel', label: 'Velocidade e prontidão', desc: 'O vendedor ataca a oportunidade enquanto ela está quente?' }
   ]},
   { id: 'conv', title: 'Qualitativo (Conversão / Efetividade)', desc: 'O esforço está gerando avanço real ou apenas movimento vazio?', checks: [
-    { id: 'diag_conv_cap', label: 'Capacidade de capturar o cliente', desc: 'A tentativa de contato vira conversa real?' },
     { id: 'diag_conv_ent', label: 'Abordagem', desc: 'O vendedor gera confiança ou parece um robô lendo script?' },
     { id: 'diag_conv_dia', label: 'Sondagem', desc: 'O vendedor faz diagnóstico ou apenas empurra produto?' },
     { id: 'diag_conv_enf', label: 'Argumentação', desc: 'O vendedor recua no primeiro "não" ou sabe contornar?' },
-    { id: 'diag_conv_and', label: 'Condução da venda', desc: 'O vendedor tem comando sobre o processo ou é refém do cliente?' }
+    { id: 'diag_conv_fec', label: 'Fechamento', desc: 'O vendedor tem comando sobre o processo ou é refém do cliente?' }
   ]},
   { id: 'proc', title: 'Processo', desc: 'O vendedor faz o básico bem feito e mantém a operação organizada?', checks: [
     { id: 'diag_proc_gov', label: 'Preenchimento do CRM', desc: 'O CRM reflete a realidade ou é cemitério de dados?' },
-    { id: 'diag_proc_cla', label: 'Classificação do lead', desc: 'O vendedor sabe exatamente onde está cada negócio?' },
+    { id: 'diag_proc_cla', label: 'Classificação do Pipeline', desc: 'O vendedor sabe exatamente onde está cada negócio?' },
     { id: 'diag_proc_con', label: 'Rotina organizacional', desc: 'O vendedor tem uma rotina de sucesso ou trabalha por espasmos?' },
     { id: 'diag_proc_res', label: 'Playbook', desc: 'O vendedor joga o jogo do time ou inventa as próprias regras?' }
   ]},
@@ -484,24 +464,24 @@ const DIAG_CONFIG = [
   ]}
 ];
 
+// 2. Ações atualizadas conforme regras
 const ACOES_CONFIG = [
   { id: 'ativ', title: 'Quantitativo (Atividade / Esforço)', checks: [
     { id: 'acao_ativ_met', label: 'Estabelecer meta mínima diária inegociável' },
     { id: 'acao_ativ_tra', label: 'Tracking de hora em hora' }
   ]},
   { id: 'conv', title: 'Qualitativo (Conversão / Efetividade)', checks: [
-    { id: 'acao_conv_rol', label: 'Roleplay intensivo' },
+    { id: 'acao_conv_rol', label: 'Treinamento Intensivo' },
     { id: 'acao_conv_ouv', label: 'Ouvir ligações juntos' },
     { id: 'acao_conv_ree', label: 'Reescrever script de abordagem' }
   ]},
   { id: 'proc', title: 'Processo', checks: [
-    { id: 'acao_proc_che', label: 'Checklist obrigatório diário' },
-    { id: 'acao_proc_rot', label: 'Rotina supervisionada de perto' },
-    { id: 'acao_proc_rev', label: 'Revisão de pipeline 1:1 semanal' }
+    { id: 'acao_proc_che', label: 'Revisão do Pipeline' },
+    { id: 'acao_proc_rot', label: 'Rotina supervisionada de perto' }
   ]},
   { id: 'comp', title: 'Comportamental', checks: [
     { id: 'acao_comp_fee', label: 'Feedback duro e direto (1:1)' },
-    { id: 'acao_comp_pip', label: 'Plano de recuperação comportamental (PIP)' },
+    { id: 'acao_comp_pip', label: 'Plano de recuperação comportamental' },
     { id: 'acao_comp_pre', label: 'Preparação para desligamento se não houver mudança' }
   ]}
 ];
@@ -712,10 +692,6 @@ function calcProgress() {
     if (el.value.trim() !== '') filled++;
   });
 
-  const esteiras = document.querySelectorAll('.track-esteira');
-  if (Array.from(esteiras).some(el => el.value.trim() !== '')) filled++;
-  totalReq += 1;
-
   DIAG_CONFIG.forEach(b => b.checks.forEach(c => {
     if(document.getElementById('chk_' + c.id).checked) filled++;
     totalReq++;
@@ -736,7 +712,7 @@ function calcProgress() {
   document.getElementById('progressPct').textContent = pct + '%';
 }
 
-const DRAFT_KEY = 'finx_daily_draft_v2';
+const DRAFT_KEY = 'finx_daily_draft_v3';
 let _isLoadingDraft = false;
 
 function saveDraft() {
@@ -852,17 +828,13 @@ function coletarFormulario() {
     equipe: document.getElementById('inputEquipe').value,
     emailGerente: document.getElementById('inputEmailGerente').value,
     
-    metaRecalcR: extractCurrency(document.getElementById('metaRecalcR').value),
-    metaRecalcVol: extractInt(document.getElementById('metaRecalcVol').value),
     metaMesR: extractCurrency(document.getElementById('metaMesR').value),
-    eficienciaCloser: extractPct(document.getElementById('eficienciaCloser').value),
-    eficienciaSDR: extractPct(document.getElementById('eficienciaSDR').value),
-    deficitR: extractCurrency(document.getElementById('deficitR').value),
-    deficitVol: extractInt(document.getElementById('deficitVol').value),
-    metaRelogioOrcado: extractCurrency(document.getElementById('metaRelogioOrcado').value),
-    metaRelogioRealizado: extractCurrency(document.getElementById('metaRelogioRealizado').value),
-    totalIndicacoes: extractInt(document.getElementById('totalIndicacoes').value),
-    ligacoesProdutivas: extractInt(document.getElementById('ligacoesProdutivas').value),
+    orcadoR: extractCurrency(document.getElementById('orcadoR').value),
+    realizadoR: extractCurrency(document.getElementById('realizadoR').value),
+    gapR: extractCurrency(document.getElementById('gapR').value),
+    metaRecalcR: extractCurrency(document.getElementById('metaRecalcR').value),
+    pagamentoPct: extractPct(document.getElementById('pagamentoPct').value),
+    capacityPct: extractPct(document.getElementById('capacityPct').value),
     
     farol: document.querySelector('input[name="farol"]:checked')?.value || '',
     
@@ -996,12 +968,10 @@ function buildEmailHTML(d) {
     <tr><td height="30"></td></tr>
     <tr><td>
       ${card('01','Indicadores do Dia', kvTable([
-        ['Meta Recalc. R$', formatCur(d.metaRecalcR)], ['Meta Recalc. Vol', d.metaRecalcVol],
-        ['Meta Mês R$', formatCur(d.metaMesR)], ['Déficit R$', formatCur(d.deficitR)],
-        ['Efic. Closer', formatPct(d.eficienciaCloser)], ['Efic. SDR', formatPct(d.eficienciaSDR)],
-        ['Déficit Vol', d.deficitVol], ['Total Indicações', d.totalIndicacoes],
-        ['Ligações Produtivas', d.ligacoesProdutivas], ['Relógio Orçado', formatCur(d.metaRelogioOrcado)], 
-        ['Relógio Realizado', formatCur(d.metaRelogioRealizado)],
+        ['Meta do Mês R$', formatCur(d.metaMesR)], ['Orçado R$', formatCur(d.orcadoR)],
+        ['Realizado R$', formatCur(d.realizadoR)], ['GAP R$', formatCur(d.gapR)],
+        ['Meta Recalculada R$', formatCur(d.metaRecalcR)], ['Pagamento', formatPct(d.pagamentoPct)],
+        ['Capacity', formatPct(d.capacityPct)]
       ]))}
       ${card('02','Diagnóstico (Ofensores)', diagCardsHTML)}
       ${temAcoes ? card('03','Plano de Ação', acoesCardsHTML) : ''}
@@ -1016,6 +986,7 @@ function buildEmailHTML(d) {
 </td></tr></table></body></html>`;
 }
 
+// Lembre-se de verificar sua URL do BACKEND
 const BACKEND_URL = 'https://script.google.com/macros/s/AKfycbwdFf0EvNFweOE7_EhNsYmpPk7-FGHsRJBcxLgnadxQ7SMmrNugnFP00eSWzx_YrKD3/exec';
 const SENHA_TESTE = '7530';
 let isSubmitting = false;
@@ -1036,6 +1007,7 @@ function montarPayload(isTeste) {
   const d = coletarFormulario();
   const flatDiag = [];
   DIAG_CONFIG.forEach(b => b.checks.forEach(c => flatDiag.push(d.diag[c.id])));
+  
   const flatAcoes = [];
   ACOES_CONFIG.forEach(g => g.checks.forEach(c => {
     const ac = d.acao[c.id];
@@ -1044,10 +1016,7 @@ function montarPayload(isTeste) {
 
   const sheetRow = [
     d.data, d.supervisor, d.equipe,
-    d.metaRecalcR, d.metaRecalcVol, d.metaMesR,
-    d.eficienciaCloser, d.eficienciaSDR,
-    d.deficitR, d.deficitVol, d.totalIndicacoes, d.ligacoesProdutivas,
-    d.metaRelogioOrcado, d.metaRelogioRealizado,
+    d.metaMesR, d.orcadoR, d.realizadoR, d.gapR, d.metaRecalcR, d.pagamentoPct, d.capacityPct,
     ...flatDiag,
     ...flatAcoes,
     d.farol
@@ -1209,7 +1178,6 @@ function resetForm(force) {
     document.querySelectorAll('.acao-fields').forEach(f => f.classList.remove('open'));
     
     atualizarListasClosers(); 
-    
     clearDraft(); 
     calcProgress();
   }
