@@ -436,7 +436,6 @@ const CLOSERS = {
   "Alysson Rodrigues": ["Ana Santos", "Gerffeson Farias", "Ingrid Sabino", "Lennira Rocha", "Nelma Cardoso", "Rafaela Bertolino", "Thiago Rosa"]
 };
 
-// 1. Diagnóstico atualizado conforme regras
 const DIAG_CONFIG = [
   { id: 'ativ', title: 'Quantitativo (Atividade / Esforço)', desc: 'A pessoa está fazendo o trabalho necessário, em quantidade suficiente, com intensidade adequada?', checks: [
     { id: 'diag_ativ_cob', label: 'Contactou todos os leads', desc: 'O vendedor está realmente trabalhando a carteira que recebe?' },
@@ -464,7 +463,6 @@ const DIAG_CONFIG = [
   ]}
 ];
 
-// 2. Ações atualizadas conforme regras
 const ACOES_CONFIG = [
   { id: 'ativ', title: 'Quantitativo (Atividade / Esforço)', checks: [
     { id: 'acao_ativ_met', label: 'Estabelecer meta mínima diária inegociável' },
@@ -986,7 +984,6 @@ function buildEmailHTML(d) {
 </td></tr></table></body></html>`;
 }
 
-// Lembre-se de verificar sua URL do BACKEND
 const BACKEND_URL = 'https://script.google.com/macros/s/AKfycbwdFf0EvNFweOE7_EhNsYmpPk7-FGHsRJBcxLgnadxQ7SMmrNugnFP00eSWzx_YrKD3/exec';
 const SENHA_TESTE = '7530';
 let isSubmitting = false;
